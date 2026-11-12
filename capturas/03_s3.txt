@@ -1,3 +1,7 @@
 $ aws s3 ls s3://parcial2-backups --recursive
-2026-11-11 17:17:55       2073 manifiestos/despliegue-fase1.yaml
-2026-11-11 17:17:56       1932 respaldos/appdb-dump.sql
+2026-11-12 12:34:32         62 manifiestos/00-namespace.yaml
+2026-11-12 12:34:32        198 manifiestos/01-secret.example.yaml
+2026-11-12 12:34:33       1411 manifiestos/02-db.yaml
+2026-11-12 12:34:33        995 manifiestos/03-api.yaml
+2026-11-12 12:34:34        428 manifiestos/04-ingress.yaml
+2026-11-12 12:34:34       1971 respaldos/appdb-dump.sql
