@@ -1,0 +1,6 @@
+$ aws eks describe-cluster
+{
+    "name": "parcial2-eks",
+    "status": "ACTIVE",
+    "endpoint": "https://localhost:6500"
+}

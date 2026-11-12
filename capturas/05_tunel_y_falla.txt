@@ -1,0 +1,27 @@
+$ kubectl get svc -n parcial2-app
+NAME   TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
+api    LoadBalancer   10.101.227.98   10.101.227.98   80:30982/TCP   49m
+db     ClusterIP      10.102.52.117   <none>          5432/TCP       49m
+
+$ curl http://10.101.227.98/health (x4, balanceo)
+{"status":"ok","pod":"api-7755755fb4-8hlfd"}
+{"status":"ok","pod":"api-7755755fb4-8hlfd"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-8hlfd"}
+
+$ kubectl delete pod/api-7755755fb4-8hlfd
+pod "api-7755755fb4-8hlfd" deleted from parcial2-app namespace
+{"status":"ok","pod":"api-7755755fb4-8hlfd"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+{"status":"ok","pod":"api-7755755fb4-xggkl"}
+
+$ kubectl get pods -n parcial2-app
+NAME                   READY   STATUS    RESTARTS   AGE
+api-7755755fb4-bkdt9   1/1     Running   0          8s
+api-7755755fb4-xggkl   1/1     Running   0          49m
+db-86c54b8576-hnmct    1/1     Running   0          49m

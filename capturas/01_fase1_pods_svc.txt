@@ -1,0 +1,14 @@
+$ kubectl get pods -n parcial2-app
+NAME                   READY   STATUS    RESTARTS   AGE
+api-7755755fb4-8hlfd   1/1     Running   0          2m35s
+api-7755755fb4-xggkl   1/1     Running   0          4m10s
+db-86c54b8576-hnmct    1/1     Running   0          4m10s
+
+$ kubectl get svc -n parcial2-app
+NAME   TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+api    LoadBalancer   10.101.227.98   <pending>     80:30982/TCP   4m10s
+db     ClusterIP      10.102.52.117   <none>        5432/TCP       4m10s
+
+$ kubectl get secret db-credentials -n parcial2-app
+NAME             TYPE     DATA   AGE
+db-credentials   Opaque   3      4m10s

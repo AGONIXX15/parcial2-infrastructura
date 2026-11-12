@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3BackupsParcial2",
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject", "s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::parcial2-backups", "arn:aws:s3:::parcial2-backups/*"]
+    },
+    {
+      "Sid": "EksClusterParcial2",
+      "Effect": "Allow",
+      "Action": ["eks:CreateCluster", "eks:DescribeCluster", "eks:ListClusters"],
+      "Resource": "arn:aws:eks:us-east-1:000000000000:cluster/parcial2-eks"
+    }
+  ]
+}
